@@ -1,0 +1,45 @@
+########################################################
+## GLOBAL CONFIG
+########################################################
+
+# Set the prefix
+prefix-message: "<bold><gold>SERVER</gold> <dark_gray>>></dark_gray></bold>"
+
+non-player-message: "<red>You need to be a player to execute this command.</red>"
+
+########################################################
+## RANDOM TP /WILD
+########################################################
+
+# True if you want to limit how far it teleports players
+world-border: false
+
+# How many blocks away they CAN spawn(not will)
+# If no world border, limit is automatically 25,000 blocks
+border: 200
+
+# Wild cool-down time
+cool-down-time: 10
+
+# Message displayed when player still in cool off period
+cool-down-message: "<white>You can use</white> <aqua>/wild</aqua> <white>again in</white> <red>{seconds-left}</red> <white>seconds.</white>"
+
+# Message displayed when a player is in the nether or end world
+incorrect-world-message: "<white>You cannot use</white> <aqua>/wild</aqua> <white>in this world.</white>"
+
+# Message displayed when a player uses the wild command wrong
+incorrect-wild-usage-message: "<red>Incorrect usage!</red> <aqua>/wild</aqua>"
+
+# Message displayed when a player is teleported
+random-location: "<white>You have been teleported to a random location.</white>"
+
+queued-teleport-message: "<gradient:#00FFEC:#FF00FB>Teleporting...</gradient>"
+
+########################################################
+## RANK KITS /KIT
+########################################################
+
+# Message displayed when a player is given a kit
+kit-message: "<gradient:#00FFEC:#FF00FB>You've been given the kit.</gradient>"
+
+available-kit-message: "<red>Please specify the kit you wish to use!</red>"

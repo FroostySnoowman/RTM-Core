@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="RaidTheMine-Core:jar">
+    <output-path>$USER_HOME$/Downloads</output-path>
+    <root id="archive" name="RaidTheMine-Core.jar">
+      <element id="module-output" name="RaidTheMine-Core" />
+    </root>
+  </artifact>
+</component>

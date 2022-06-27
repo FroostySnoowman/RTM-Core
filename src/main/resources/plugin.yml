@@ -1,0 +1,16 @@
+name: RaidTheMine-Core
+version: '${project.version}'
+main: com.jordanhaddrick.rtm.Main
+api-version: 1.18
+authors: [SomeKidsBrother, Someone]
+description: Core plugin for RaidTheMine
+website: www.RaidTheMine.com
+commands:
+  wild:
+    description: Teleport to a random location
+    usage: /<command>
+    permission: rtm.wild
+  kit:
+    description: Access the kits you have access to
+    usage: /<command>
+    permission: rtm.kit
