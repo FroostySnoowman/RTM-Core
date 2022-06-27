@@ -43,3 +43,5 @@ queued-teleport-message: "<gradient:#00FFEC:#FF00FB>Teleporting...</gradient>"
 kit-message: "<gradient:#00FFEC:#FF00FB>You've been given the kit.</gradient>"
 
 available-kit-message: "<red>Please specify the kit you wish to use!</red>"
+
+incorrect-kit-usage-message: "<red>Incorrect kit!</red> <aqua>Please try again with a correct kit name.</aqua>"

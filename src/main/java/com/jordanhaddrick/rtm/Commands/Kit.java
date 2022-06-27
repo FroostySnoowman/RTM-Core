@@ -1,5 +1,10 @@
 package com.jordanhaddrick.rtm.Commands;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import com.jordanhaddrick.rtm.Main;
 import org.bukkit.Material;
@@ -8,6 +13,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.command.TabCompleter;
+import org.bukkit.util.StringUtil;
 
 public class Kit implements CommandExecutor {
     private static Main main;
@@ -18,11 +25,9 @@ public class Kit implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        //Check if there's any ar
         if (args.length >= 1) {
 
-            //Check if the kit is "test"
-            if (args[1] == "test") {
+            if(args[0].equalsIgnoreCase("test")) {
 
                 if (sender instanceof Player) {
                     Player player = (Player) sender;
@@ -48,10 +53,12 @@ public class Kit implements CommandExecutor {
                     sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + non_player_message));
                 }
 
-                return false;
+                return true;
 
             } else {
-                sender.sendMessage(MiniMessage.miniMessage().deserialize("gey"));
+                String prefix_message = main.getConfig().getString("prefix-message");
+                String incorrect_kit_usage_message = main.getConfig().getString("incorrect-kit-usage-message");
+                sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + incorrect_kit_usage_message));
             }
 
         } else {
@@ -60,7 +67,7 @@ public class Kit implements CommandExecutor {
                 sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + available_kit_message));
             }
 
-            return false;
+            return true;
     }
 
 }
