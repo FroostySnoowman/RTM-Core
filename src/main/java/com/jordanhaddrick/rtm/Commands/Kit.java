@@ -18,31 +18,41 @@ public class Kit implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+        //Check if there's any ar
         if (args.length >= 1) {
-            if (sender instanceof Player) {
-                Player player = (Player) sender;
 
-                ItemStack diamond = new ItemStack(Material.DIAMOND);
+            //Check if the kit is "test"
+            if (args[1] == "test") {
 
-                ItemStack bricks = new ItemStack(Material.BRICK);
+                if (sender instanceof Player) {
+                    Player player = (Player) sender;
 
-                bricks.setAmount(20);
+                    ItemStack diamond = new ItemStack(Material.DIAMOND);
 
-                player.getInventory().addItem(bricks, diamond);
+                    ItemStack bricks = new ItemStack(Material.BRICK);
 
-                String prefix_message = main.getConfig().getString("prefix-message");
-                String kit_message = main.getConfig().getString("kit-message");
+                    bricks.setAmount(20);
 
-                sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + kit_message));
+                    player.getInventory().addItem(bricks, diamond);
 
-                return true;
+                    String prefix_message = main.getConfig().getString("prefix-message");
+                    String kit_message = main.getConfig().getString("kit-message");
+
+                    sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + kit_message));
+
+                    return true;
+
+                } else {
+                    String prefix_message = main.getConfig().getString("prefix-message");
+                    String non_player_message = main.getConfig().getString("non-player-message");
+                    sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + non_player_message));
+                }
+
+                return false;
+
             } else {
-                String prefix_message = main.getConfig().getString("prefix-message");
-                String non_player_message = main.getConfig().getString("non-player-message");
-                sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + non_player_message));
+                sender.sendMessage(MiniMessage.miniMessage().deserialize("gey"));
             }
-
-            return false;
 
         } else {
                 String prefix_message = main.getConfig().getString("prefix-message");
