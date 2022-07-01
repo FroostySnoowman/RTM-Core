@@ -13,6 +13,3 @@ commands:
   kit:
     description: Access the kits you have access to
     usage: /<command>
-  test:
-    description: Testing stuff
-    usage: /<command>
