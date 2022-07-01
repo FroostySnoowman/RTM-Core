@@ -1,12 +1,9 @@
 package com.jordanhaddrick.rtm;
 
-import com.jordanhaddrick.rtm.Commands.Kit;
-import com.jordanhaddrick.rtm.Commands.TestCommand;
+import com.jordanhaddrick.rtm.Commands.KitCommand;
 import com.jordanhaddrick.rtm.Commands.Wild;
 import com.jordanhaddrick.rtm.Utilities.Teleport;
 import org.bukkit.Bukkit;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
@@ -20,9 +17,7 @@ public class Main extends JavaPlugin {
         // Commands
         getCommand("wild").setExecutor(new Wild(this));
 
-        this.getCommand("kit").setExecutor((CommandExecutor) new Kit(this));
-
-        this.getCommand("test").setTabCompleter(new TestCommand());
+        getCommand("kit").setExecutor(new KitCommand(this));
 
         // Listeners
 
