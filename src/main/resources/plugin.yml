@@ -13,3 +13,7 @@ commands:
   kit:
     description: Access the kits you have access to
     usage: /<command>
+  gms:
+    description: Changes your gamemode to survival
+    usage: /<command>
+    permission: rtm.gms

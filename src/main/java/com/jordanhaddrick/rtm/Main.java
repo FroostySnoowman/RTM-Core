@@ -1,6 +1,7 @@
 package com.jordanhaddrick.rtm;
 
 import com.jordanhaddrick.rtm.Commands.KitCommand;
+import com.jordanhaddrick.rtm.Commands.GamemodeSurvival;
 import com.jordanhaddrick.rtm.Commands.Wild;
 import com.jordanhaddrick.rtm.Utilities.Teleport;
 import org.bukkit.Bukkit;
@@ -18,6 +19,8 @@ public class Main extends JavaPlugin {
         getCommand("wild").setExecutor(new Wild(this));
 
         getCommand("kit").setExecutor(new KitCommand(this));
+
+        getCommand("gms").setExecutor(new GamemodeSurvival(this));
 
         // Listeners
 
