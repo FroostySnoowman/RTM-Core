@@ -85,3 +85,13 @@ fly-disabled-message: "<gradient:#00FFEC:#FF00FB>Your flight has been disabled!<
 
 fly-enabled-other-message: "<gradient:#00FFEC:#FF00FB>You enabled flight for <player>!</gradient>"
 fly-disabled-other-message: "<gradient:#00FFEC:#FF00FB>You disabled flight for <player>!</gradient>"
+
+########################################################
+## GOD COMMAND
+########################################################
+
+god-enabled-message: "<gradient:#00FFEC:#FF00FB>Your god mode has been enabled!</gradient>"
+god-disabled-message: "<gradient:#00FFEC:#FF00FB>Your god mode has been disabled!</gradient>"
+
+god-enabled-other-message: "<gradient:#00FFEC:#FF00FB>You enabled god mode for <player>!</gradient>"
+god-disabled-other-message: "<gradient:#00FFEC:#FF00FB>You disabled god mode for <player>!</gradient>"

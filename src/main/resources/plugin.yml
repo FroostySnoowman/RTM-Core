@@ -37,3 +37,7 @@ commands:
     description: Toggle your flight
     usage: /<command>
     permission: rtm.fly
+  god:
+    description: Become invunerable
+    usage: /<command>
+    permission: rtm.god

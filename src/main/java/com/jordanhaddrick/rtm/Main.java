@@ -23,6 +23,8 @@ public class Main extends JavaPlugin {
         getCommand("gmc").setExecutor(new GamemodeCreative(this));
         getCommand("gms").setExecutor(new GamemodeSurvival(this));
 
+        getCommand("god").setExecutor(new GodCommand(this));
+
         getCommand("heal").setExecutor(new HealCommand(this));
 
         getCommand("kit").setExecutor(new KitCommand(this));
