@@ -26,6 +26,10 @@ commands:
     usage: /<command>
     permission: rtm.gmsp
   feed:
-    description: Feed yourself
+    description: Fulfill someone's needs
+    usage: /<command>
+    permission: rtm.feed
+  heal:
+    description: Heal someone back to full health
     usage: /<command>
     permission: rtm.feed

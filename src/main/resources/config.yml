@@ -67,3 +67,11 @@ gamemode-other: "<gradient:#00FFEC:#FF00FB>You've set <player>'s gamemode to <ty
 feed-message: "<gradient:#00FFEC:#FF00FB>You've been fed!</gradient>"
 
 feed-other-message: "<gradient:#00FFEC:#FF00FB>You fed <player>!</gradient>"
+
+########################################################
+## HEAL COMMAND
+########################################################
+
+heal-message: "<gradient:#00FFEC:#FF00FB>You've been healed!</gradient>"
+
+heal-other-message: "<gradient:#00FFEC:#FF00FB>You healed <player>!</gradient>"
