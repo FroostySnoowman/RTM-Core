@@ -3,7 +3,6 @@ package com.jordanhaddrick.rtm.Commands;
 import com.jordanhaddrick.rtm.Main;
 import com.jordanhaddrick.rtm.Utilities.Teleport;
 import net.kyori.adventure.text.minimessage.MiniMessage;
-import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -13,11 +12,11 @@ import org.bukkit.entity.Player;
 import java.util.HashMap;
 import java.util.UUID;
 
-public class Wild implements CommandExecutor {
+public class WildCommand implements CommandExecutor {
     private HashMap<UUID, Long> cooldown = new HashMap<UUID, Long>();
     private static Main main;
 
-    public Wild(Main main) {
+    public WildCommand(Main main) {
         this.main = main;
     }
 

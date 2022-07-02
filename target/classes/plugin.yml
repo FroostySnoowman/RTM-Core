@@ -32,4 +32,8 @@ commands:
   heal:
     description: Heal someone back to full health
     usage: /<command>
-    permission: rtm.feed
+    permission: rtm.heal
+  fly:
+    description: Toggle your flight
+    usage: /<command>
+    permission: rtm.fly

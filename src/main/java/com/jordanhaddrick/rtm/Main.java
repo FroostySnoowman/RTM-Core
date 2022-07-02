@@ -17,6 +17,8 @@ public class Main extends JavaPlugin {
 
         getCommand("feed").setExecutor(new FeedCommand(this));
 
+        getCommand("fly").setExecutor(new FlyCommand(this));
+
         getCommand("gmsp").setExecutor(new GamemodeSpectator(this));
         getCommand("gmc").setExecutor(new GamemodeCreative(this));
         getCommand("gms").setExecutor(new GamemodeSurvival(this));
@@ -25,7 +27,7 @@ public class Main extends JavaPlugin {
 
         getCommand("kit").setExecutor(new KitCommand(this));
 
-        getCommand("wild").setExecutor(new Wild(this));
+        getCommand("wild").setExecutor(new WildCommand(this));
 
         // Listeners
 

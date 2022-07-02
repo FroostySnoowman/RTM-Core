@@ -75,3 +75,13 @@ feed-other-message: "<gradient:#00FFEC:#FF00FB>You fed <player>!</gradient>"
 heal-message: "<gradient:#00FFEC:#FF00FB>You've been healed!</gradient>"
 
 heal-other-message: "<gradient:#00FFEC:#FF00FB>You healed <player>!</gradient>"
+
+########################################################
+## FLY COMMAND
+########################################################
+
+fly-enabled-message: "<gradient:#00FFEC:#FF00FB>Your flight has been enabled!</gradient>"
+fly-disabled-message: "<gradient:#00FFEC:#FF00FB>Your flight has been disabled!</gradient>"
+
+fly-enabled-other-message: "<gradient:#00FFEC:#FF00FB>You enabled flight for <player>!</gradient>"
+fly-disabled-other-message: "<gradient:#00FFEC:#FF00FB>You disabled flight for <player>!</gradient>"
