@@ -28,32 +28,28 @@ public class GamemodeSpectator implements TabExecutor {
         if (sender instanceof Player) {
             Player player = (Player) sender;
             String type = "spectator";
+            String prefix_message = main.getConfig().getString("prefix-message");
             try {
                 Player target = Bukkit.getPlayer(args[0]);
                 if (target != null) {
                     if (target.getPlayer().getGameMode() == GameMode.SPECTATOR) {
-                        String prefix_message = main.getConfig().getString("prefix-message");
                         String incorrect_gamemode_other_usage_message = main.getConfig().getString("incorrect-gamemode-other-usage-message");
                         sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + incorrect_gamemode_other_usage_message, Placeholder.component("player", target.displayName()), Placeholder.component("type", Component.text(type))));
                     } else {
                         target.setGameMode(GameMode.SPECTATOR);
-                        String prefix_message = main.getConfig().getString("prefix-message");
                         String gamemode_other = main.getConfig().getString("gamemode-other");
                         sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + gamemode_other, Placeholder.component("player", target.displayName()), Placeholder.component("type", Component.text(type))));
                     }
                 } else {
-                    String prefix_message = main.getConfig().getString("prefix-message");
                     String invalid_player_message = main.getConfig().getString("invalid-player-message");
                     sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + invalid_player_message));
                 }
             } catch (Exception e) {
                 if (player.getPlayer().getGameMode() == GameMode.SPECTATOR) {
-                    String prefix_message = main.getConfig().getString("prefix-message");
                     String incorrect_gamemode_usage_message = main.getConfig().getString("incorrect-gamemode-usage-message");
                     sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + incorrect_gamemode_usage_message, Placeholder.component("type", Component.text(type))));
                 } else {
                     player.setGameMode(GameMode.SPECTATOR);
-                    String prefix_message = main.getConfig().getString("prefix-message");
                     String gms_message = main.getConfig().getString("gamemode-message");
                     sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + gms_message, Placeholder.component("type", Component.text(type))));
                 }
