@@ -25,3 +25,7 @@ commands:
     description: Changes your gamemode to spectator
     usage: /<command>
     permission: rtm.gmsp
+  feed:
+    description: Feed yourself
+    usage: /<command>
+    permission: rtm.feed

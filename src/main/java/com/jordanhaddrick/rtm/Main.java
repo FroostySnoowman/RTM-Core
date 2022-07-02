@@ -14,13 +14,16 @@ public class Main extends JavaPlugin {
         Bukkit.getServer().getConsoleSender().sendMessage("RaidTheMine-Core loaded.");
 
         // Commands
-        getCommand("wild").setExecutor(new Wild(this));
+
+        getCommand("feed").setExecutor(new FeedCommand(this));
+
+        getCommand("gmsp").setExecutor(new GamemodeSpectator(this));
+        getCommand("gmc").setExecutor(new GamemodeCreative(this));
+        getCommand("gms").setExecutor(new GamemodeSurvival(this));
 
         getCommand("kit").setExecutor(new KitCommand(this));
 
-        getCommand("gms").setExecutor(new GamemodeSurvival(this));
-        getCommand("gmc").setExecutor(new GamemodeCreative(this));
-        getCommand("gmsp").setExecutor(new GamemodeSpectator(this));
+        getCommand("wild").setExecutor(new Wild(this));
 
         // Listeners
 

@@ -60,3 +60,10 @@ incorrect-gamemode-usage-message: "<gradient:#00FFEC:#FF00FB>Your gamemode is al
 incorrect-gamemode-other-usage-message: "<gradient:#00FFEC:#FF00FB><player>'s gamemode is already <type>!</gradient>"
 
 gamemode-other: "<gradient:#00FFEC:#FF00FB>You've set <player>'s gamemode to <type>!</gradient>"
+
+########################################################
+## FEED COMMAND
+########################################################
+feed-message: "<gradient:#00FFEC:#FF00FB>You've been fed!</gradient>"
+
+feed-other-message: "<gradient:#00FFEC:#FF00FB>You fed <player>!</gradient>"
