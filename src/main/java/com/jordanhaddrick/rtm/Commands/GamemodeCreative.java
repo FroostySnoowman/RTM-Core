@@ -2,7 +2,6 @@ package com.jordanhaddrick.rtm.Commands;
 
 import java.util.List;
 
-import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import com.jordanhaddrick.rtm.Main;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
@@ -11,10 +10,10 @@ import org.bukkit.GameMode;
 import org.bukkit.command.*;
 import org.bukkit.entity.Player;
 
-public class GamemodeSurvival implements TabExecutor {
+public class GamemodeCreative implements TabExecutor {
     private Main main;
 
-    public GamemodeSurvival(Main main) {
+    public GamemodeCreative(Main main) {
         this.main = main;
     }
 
@@ -27,20 +26,19 @@ public class GamemodeSurvival implements TabExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
             Player player = (Player) sender;
-            String type = "survival";
             try {
                 Player target = Bukkit.getPlayer(args[0]);
                 if (target != null) {
-                    if (target.getPlayer().getGameMode() == GameMode.SURVIVAL) {
+                    if (target.getPlayer().getGameMode() == GameMode.CREATIVE) {
                         String prefix_message = main.getConfig().getString("prefix-message");
-                        String incorrect_gamemode_other_usage_message = main.getConfig().getString("incorrect-gamemode-other-usage-message");
-                        sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + incorrect_gamemode_other_usage_message, Placeholder.component("player", target.displayName()), Placeholder.component("type", Component.text(type))));
+                        String incorrect_gms_other_usage_message = main.getConfig().getString("incorrect-gms-other-usage-message");
+                        sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + incorrect_gms_other_usage_message, Placeholder.component("player", target.displayName())));
                     }
                     else {
-                        target.setGameMode(GameMode.SURVIVAL);
+                        target.setGameMode(GameMode.CREATIVE);
                         String prefix_message = main.getConfig().getString("prefix-message");
-                        String gamemode_other = main.getConfig().getString("gamemode-other");
-                        sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + gamemode_other, Placeholder.component("player", target.displayName()), Placeholder.component("type", Component.text(type))));
+                        String gms_other = main.getConfig().getString("gms-other");
+                        sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + gms_other, Placeholder.component("player", target.displayName())));
                     }
                 }
                 else {
@@ -50,16 +48,16 @@ public class GamemodeSurvival implements TabExecutor {
                 }
             }
             catch(Exception e) {
-                if (player.getPlayer().getGameMode() == GameMode.SURVIVAL) {
+                if (player.getPlayer().getGameMode() == GameMode.CREATIVE) {
                     String prefix_message = main.getConfig().getString("prefix-message");
-                    String incorrect_gamemode_usage_message = main.getConfig().getString("incorrect-gamemode-usage-message");
-                    sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + incorrect_gamemode_usage_message, Placeholder.component("type", Component.text(type))));
+                    String incorrect_gms_usage_message = main.getConfig().getString("incorrect-gms-usage-message");
+                    sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + incorrect_gms_usage_message));
                 }
                 else {
-                    player.setGameMode(GameMode.SURVIVAL);
+                    player.setGameMode(GameMode.CREATIVE);
                     String prefix_message = main.getConfig().getString("prefix-message");
-                    String gms_message = main.getConfig().getString("gamemode-message");
-                    sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + gms_message, Placeholder.component("type", Component.text(type))));
+                    String gms_message = main.getConfig().getString("gms-message");
+                    sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + gms_message));
                 }
             }
         }

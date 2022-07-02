@@ -13,6 +13,11 @@ commands:
   kit:
     description: Access the kits you have access to
     usage: /<command>
-  test:
-    description: Testing stuff
+  gms:
+    description: Changes your gamemode to survival
     usage: /<command>
+    permission: rtm.gms
+  gmc:
+    description: Changes your gamemode to creative
+    usage: /<command>
+    permission: rtm.gmc

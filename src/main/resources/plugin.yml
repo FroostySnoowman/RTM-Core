@@ -17,3 +17,7 @@ commands:
     description: Changes your gamemode to survival
     usage: /<command>
     permission: rtm.gms
+  gmc:
+    description: Changes your gamemode to creative
+    usage: /<command>
+    permission: rtm.gmc

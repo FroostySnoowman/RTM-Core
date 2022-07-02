@@ -7,6 +7,8 @@ prefix-message: "<bold><gold>SERVER</gold> <dark_gray>>></dark_gray></bold>"
 
 non-player-message: "<red>You need to be a player to execute this command.</red>"
 
+invalid-player-message: "<gradient:#FF0000:#FF3DC5>Invalid player!</gradient>"
+
 ########################################################
 ## RANDOM TP /WILD
 ########################################################
@@ -50,7 +52,11 @@ incorrect-kit-usage-message: "<red>Incorrect kit!</red> <aqua>Please try again w
 ## GAMEMODE COMMANDS
 ########################################################
 
-# Message displayed when you change your gamemode to survival
-gms-message: "<gradient:#00FFEC:#FF00FB>Your gamemode has been changed to survival!</gradient>"
+# Gamemode messages
+gamemode-message: "<gradient:#00FFEC:#FF00FB>Your gamemode has been changed to <type>!</gradient>"
 
-incorrect-gms-usage-message: "<gradient:#00FFEC:#FF00FB>Your gamemode is already survival!</gradient>"
+incorrect-gamemode-usage-message: "<gradient:#00FFEC:#FF00FB>Your gamemode is already <type>!</gradient>"
+
+incorrect-gamemode-other-usage-message: "<gradient:#00FFEC:#FF00FB><player>'s gamemode is already <type>!</gradient>"
+
+gamemode-other: "<gradient:#00FFEC:#FF00FB>You've set <player>'s gamemode to <type>!</gradient>"
