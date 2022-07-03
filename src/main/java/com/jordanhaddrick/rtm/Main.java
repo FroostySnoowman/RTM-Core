@@ -31,6 +31,8 @@ public class Main extends JavaPlugin {
 
         getCommand("msg").setExecutor(new MsgCommand(this));
 
+        getCommand("tp").setExecutor(new TpCommand(this));
+
         getCommand("wild").setExecutor(new WildCommand(this));
 
         // Listeners

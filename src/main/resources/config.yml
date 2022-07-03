@@ -105,3 +105,11 @@ msg-sent-no-player-message: "<gradient:#FF0000:#FF3DC5>You can't send a message 
 msg-sent-no-content-message: "<gradient:#FF0000:#FF3DC5>You can't send no message to someone!</gradient>"
 
 msg-received-message: "<green>[</green><aqua><sender></aqua> <green>-></green> <yellow>me</yellow><green>]</green> <gray><message></gray>"
+
+########################################################
+## TELEPORT COMMANDS
+########################################################
+
+tp-message: "<gradient:#00FFEC:#FF00FB>You teleported to <player>!</gradient>"
+
+tp-no-player-message: "<gradient:#FF0000:#FF3DC5>You can't teleport to no one!</gradient>"
