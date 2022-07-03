@@ -37,11 +37,12 @@ public class KitCommand implements TabExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (args.length >= 1) {
+        String prefix_message = main.getConfig().getString("prefix-message");
+        if (sender instanceof Player) {
+            if (args.length >= 1) {
 
-            if(args[0].equalsIgnoreCase("kit1")) {
+                if(args[0].equalsIgnoreCase("kit1")) {
 
-                if (sender instanceof Player) {
                     Player player = (Player) sender;
 
                     ItemStack diamond = new ItemStack(Material.DIAMOND);
@@ -52,30 +53,24 @@ public class KitCommand implements TabExecutor {
 
                     player.getInventory().addItem(bricks, diamond);
 
-                    String prefix_message = main.getConfig().getString("prefix-message");
                     String kit_message = main.getConfig().getString("kit-message");
 
                     sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + kit_message));
 
-                    return true;
-
                 } else {
-                    String non_player_message = main.getConfig().getString("non-player-message");
-                    sender.sendMessage(MiniMessage.miniMessage().deserialize(non_player_message));
+                    String incorrect_kit_usage_message = main.getConfig().getString("incorrect-kit-usage-message");
+                    sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + incorrect_kit_usage_message));
                 }
 
-                return true;
-
             } else {
-                String prefix_message = main.getConfig().getString("prefix-message");
-                String incorrect_kit_usage_message = main.getConfig().getString("incorrect-kit-usage-message");
-                sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + incorrect_kit_usage_message));
+                String available_kit_message = main.getConfig().getString("available-kit-message");
+                sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + available_kit_message));
             }
 
+
         } else {
-            String prefix_message = main.getConfig().getString("prefix-message");
-            String available_kit_message = main.getConfig().getString("available-kit-message");
-            sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + available_kit_message));
+            String non_player_message = main.getConfig().getString("non-player-message");
+            sender.sendMessage(MiniMessage.miniMessage().deserialize(non_player_message));
         }
 
         return true;

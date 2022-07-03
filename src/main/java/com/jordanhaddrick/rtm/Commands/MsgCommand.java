@@ -24,9 +24,9 @@ public class MsgCommand implements TabExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+        String prefix_message = main.getConfig().getString("prefix-message");
         if (sender instanceof Player) {
             Player player = (Player) sender;
-            String prefix_message = main.getConfig().getString("prefix-message");
             try {
                 Player target = Bukkit.getPlayer(args[0]);
                 if (target != null) {
@@ -48,6 +48,9 @@ public class MsgCommand implements TabExecutor {
                 String msg_sent_no_player_message = main.getConfig().getString("msg-sent-no-player-message");
                 sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + msg_sent_no_player_message));
             }
+        } else {
+            String non_player_message = main.getConfig().getString("non-player-message");
+            sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message = ' ' + non_player_message));
         }
         return true;
     }

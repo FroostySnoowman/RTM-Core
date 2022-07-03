@@ -58,6 +58,9 @@ public class GodCommand implements TabExecutor {
                     sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + god_enabled_message));
                 }
             }
+        } else {
+            String non_player_message = main.getConfig().getString("non-player-message");
+            sender.sendMessage(MiniMessage.miniMessage().deserialize(non_player_message));
         }
         return true;
     }

@@ -54,6 +54,9 @@ public class HealCommand implements TabExecutor {
                 String feed_message = main.getConfig().getString("heal-message");
                 sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + feed_message));
             }
+        } else {
+            String non_player_message = main.getConfig().getString("non-player-message");
+            sender.sendMessage(MiniMessage.miniMessage().deserialize(non_player_message));
         }
         return true;
     }
