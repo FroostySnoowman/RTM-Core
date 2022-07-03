@@ -44,3 +44,7 @@ commands:
   msg:
     description: Privately message someone
     usage: /<command>
+  tp:
+    description: Teleport to someone
+    usage: /<command>
+    permission: rtm.tp
