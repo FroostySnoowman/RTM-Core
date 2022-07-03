@@ -36,7 +36,6 @@ public class WildCommand implements CommandExecutor {
                     // Check if player is in cooling-off period
                     if(secondsLeft > 0) {
                         sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + cool_down_message));
-                        return true;
                     }
                     // Remove from hashmap, teleport player
                     else if (secondsLeft <= 0) {
@@ -49,13 +48,12 @@ public class WildCommand implements CommandExecutor {
                     return teleport(args, player);
                 }
             }
-        }
-        else {
+        } else {
             String non_player_message = main.getConfig().getString("non-player-message");
             sender.sendMessage(MiniMessage.miniMessage().deserialize(non_player_message));
         }
 
-        return false;
+        return true;
     }
 
     private boolean teleport(String[] args, Player player) {
@@ -71,7 +69,6 @@ public class WildCommand implements CommandExecutor {
                 String incorrect_world_message = main.getConfig().getString("incorrect-world-message");
 
                 player.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + incorrect_world_message));
-                return true;
             }
             else {
 
@@ -88,14 +85,13 @@ public class WildCommand implements CommandExecutor {
                 // Notify the player
                 String random_location = main.getConfig().getString("random-location");
                 player.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + random_location));
-                return true;
             }
         }
         else {
             String prefix_message = main.getConfig().getString("prefix-message");
             String incorrect_wild_usage_message = main.getConfig().getString("incorrect-wild-usage-message");
             player.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + incorrect_wild_usage_message));
-            return true;
         }
+        return true;
     }
 }
