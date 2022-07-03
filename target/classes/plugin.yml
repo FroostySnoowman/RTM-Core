@@ -9,42 +9,36 @@ commands:
   wild:
     description: Teleport to a random location
     usage: /<command>
-    permission: rtm.wild
   kit:
     description: Access the kits you have access to
     usage: /<command>
   gms:
     description: Changes your gamemode to survival
     usage: /<command>
-    permission: rtm.gms
   gmc:
     description: Changes your gamemode to creative
     usage: /<command>
-    permission: rtm.gmc
   gmsp:
     description: Changes your gamemode to spectator
     usage: /<command>
-    permission: rtm.gmsp
   feed:
     description: Fulfill someone's needs
     usage: /<command>
-    permission: rtm.feed
   heal:
     description: Heal someone back to full health
     usage: /<command>
-    permission: rtm.heal
   fly:
     description: Toggle your flight
     usage: /<command>
-    permission: rtm.fly
   god:
     description: Become invunerable
     usage: /<command>
-    permission: rtm.god
   msg:
     description: Privately message someone
     usage: /<command>
   tp:
     description: Teleport to someone
     usage: /<command>
-    permission: rtm.tp
+  tphere:
+    description: Teleport to someone to you
+    usage: /<command>

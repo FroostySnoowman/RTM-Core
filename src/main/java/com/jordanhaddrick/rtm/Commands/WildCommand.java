@@ -2,7 +2,9 @@ package com.jordanhaddrick.rtm.Commands;
 
 import com.jordanhaddrick.rtm.Main;
 import com.jordanhaddrick.rtm.Utilities.Teleport;
+import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
+import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -22,31 +24,35 @@ public class WildCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+        String prefix_message = main.getConfig().getString("prefix-message");
+        String no_permission_message = main.getConfig().getString("no-permission-message");
         if(sender instanceof Player) {
-            int cooldownTime = main.getConfig().getInt("cool-down-time");
-            Player player = (Player) sender;
+            if (sender.hasPermission("rtm.wild")) {
+                int cooldownTime = main.getConfig().getInt("cool-down-time");
+                Player player = (Player) sender;
 
-            if(cmd.getName().equalsIgnoreCase("wild")) {
-                // Check if player is in HashMap
-                if(cooldown.containsKey(player.getUniqueId())) {
-                    long secondsLeft = ((cooldown.get(player.getUniqueId())/1000) + cooldownTime) - (System.currentTimeMillis() / 1000);
-                    String cool_down_message = main.getConfig().getString("cool-down-message").replace("{seconds-left}", String.valueOf(secondsLeft));
-                    String prefix_message = main.getConfig().getString("prefix-message");
+                if (cmd.getName().equalsIgnoreCase("wild")) {
+                    // Check if player is in HashMap
+                    if (cooldown.containsKey(player.getUniqueId())) {
+                        long secondsLeft = ((cooldown.get(player.getUniqueId()) / 1000) + cooldownTime) - (System.currentTimeMillis() / 1000);
+                        String cool_down_message = main.getConfig().getString("cool-down-message").replace("{seconds-left}", String.valueOf(secondsLeft));
 
-                    // Check if player is in cooling-off period
-                    if(secondsLeft > 0) {
-                        sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + cool_down_message));
-                    }
-                    // Remove from hashmap, teleport player
-                    else if (secondsLeft <= 0) {
-                        cooldown.remove(player.getUniqueId());
+                        // Check if player is in cooling-off period
+                        if (secondsLeft > 0) {
+                            sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + cool_down_message));
+                        }
+                        // Remove from hashmap, teleport player
+                        else if (secondsLeft <= 0) {
+                            cooldown.remove(player.getUniqueId());
+                            return teleport(args, player);
+                        }
+                    } else {
+                        // First time command usage, teleport player
                         return teleport(args, player);
                     }
                 }
-                else {
-                    // First time command usage, teleport player
-                    return teleport(args, player);
-                }
+            } else {
+                sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + no_permission_message, Placeholder.component("permission", Component.text("rtm.wild"))));
             }
         } else {
             String non_player_message = main.getConfig().getString("non-player-message");

@@ -11,10 +11,10 @@ import org.bukkit.Location;
 import org.bukkit.command.*;
 import org.bukkit.entity.Player;
 
-public class TpCommand implements TabExecutor {
+public class TphereCommand implements TabExecutor {
     private Main main;
 
-    public TpCommand(Main main) {
+    public TphereCommand(Main main) {
         this.main = main;
     }
 
@@ -28,25 +28,25 @@ public class TpCommand implements TabExecutor {
         String prefix_message = main.getConfig().getString("prefix-message");
         String no_permission_message = main.getConfig().getString("no-permission-message");
         if (sender instanceof Player) {
-            if (sender.hasPermission("rtm.tp")) {
+            if (sender.hasPermission("rtm.tphere")) {
                 Player player = (Player) sender;
                 try {
                     Player target = Bukkit.getPlayer(args[0]);
-                    Location targetlocation = target.getLocation();
+                    Location targetlocation = player.getLocation();
                     if (target != null) {
                         player.teleport(targetlocation);
-                        String tp_message = main.getConfig().getString("tp-message");
+                        String tp_message = main.getConfig().getString("tphere-message");
                         sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + tp_message, Placeholder.component("player", target.displayName())));
                     } else {
                         String invalid_player_message = main.getConfig().getString("invalid-player-message");
                         sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + invalid_player_message));
                     }
                 } catch (Exception e) {
-                    String tp_no_player_message = main.getConfig().getString("tp-no-player-message");
+                    String tp_no_player_message = main.getConfig().getString("tphere-no-player-message");
                     sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + tp_no_player_message));
                 }
             } else {
-                sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + no_permission_message, Placeholder.component("permission", Component.text("rtm.tp"))));
+                sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + no_permission_message, Placeholder.component("permission", Component.text("rtm.tphere"))));
             }
         } else {
             String non_player_message = main.getConfig().getString("non-player-message");

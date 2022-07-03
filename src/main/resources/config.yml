@@ -9,6 +9,8 @@ non-player-message: "<red>You need to be a player to execute this command.</red>
 
 invalid-player-message: "<gradient:#FF0000:#FF3DC5>Invalid player!</gradient>"
 
+no-permission-message: "<gradient:#FF0000:#FF3DC5>You don't have the \"<permission>\" permission to use this command!</gradient>"
+
 ########################################################
 ## RANDOM TP /WILD
 ########################################################
@@ -113,3 +115,7 @@ msg-received-message: "<green>[</green><aqua><sender></aqua> <green>-></green> <
 tp-message: "<gradient:#00FFEC:#FF00FB>You teleported to <player>!</gradient>"
 
 tp-no-player-message: "<gradient:#FF0000:#FF3DC5>You can't teleport to no one!</gradient>"
+
+tphere-message: "<gradient:#00FFEC:#FF00FB>You teleported <player> to you!</gradient>"
+
+tphere-no-player-message: "<gradient:#FF0000:#FF3DC5>You can't teleport no one to you!</gradient>"
