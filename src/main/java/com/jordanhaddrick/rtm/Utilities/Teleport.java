@@ -46,9 +46,7 @@ public class Teleport {
             y = 150;
         }
 
-        Location randomLocation = new Location(player.getWorld(), x, y, z);
-        y = randomLocation.getWorld().getHighestBlockYAt(randomLocation);
-        randomLocation.setY(y);
+        Location randomLocation = new Location(player.getWorld(), x, y, z).toCenterLocation().toHighestLocation().add(0, 1, 0);
 
         return randomLocation;
     }

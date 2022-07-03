@@ -95,3 +95,13 @@ god-disabled-message: "<gradient:#00FFEC:#FF00FB>Your god mode has been disabled
 
 god-enabled-other-message: "<gradient:#00FFEC:#FF00FB>You enabled god mode for <player>!</gradient>"
 god-disabled-other-message: "<gradient:#00FFEC:#FF00FB>You disabled god mode for <player>!</gradient>"
+
+########################################################
+## MSG COMMAND
+########################################################
+
+msg-sent-message: "<green>[</green><yellow>me</yellow> <green>-></green> <aqua><sender></aqua><green>]</green> <gray><message></gray>"
+msg-sent-no-player-message: "<gradient:#FF0000:#FF3DC5>You can't send a message to no one!</gradient>"
+msg-sent-no-content-message: "<gradient:#FF0000:#FF3DC5>You can't send no message to someone!</gradient>"
+
+msg-received-message: "<green>[</green><aqua><sender></aqua> <green>-></green> <yellow>me</yellow><green>]</green> <gray><message></gray>"

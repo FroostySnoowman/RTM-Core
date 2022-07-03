@@ -41,3 +41,6 @@ commands:
     description: Become invunerable
     usage: /<command>
     permission: rtm.god
+  msg:
+    description: Privately message someone
+    usage: /<command>
