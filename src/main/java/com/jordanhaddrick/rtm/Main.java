@@ -16,7 +16,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.RegisteredServiceProvider;
-import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
 
@@ -49,6 +48,8 @@ public class Main extends JavaPlugin {
 
         getCommand("msg").setExecutor(new MsgCommand(this));
 
+        getCommand("speed").setExecutor(new SpeedCommand(this));
+
         getCommand("tp").setExecutor(new TpCommand(this));
         getCommand("tphere").setExecutor(new TphereCommand(this));
 
@@ -64,7 +65,7 @@ public class Main extends JavaPlugin {
         saveDefaultConfig();
 
         if (!setupEconomy() ) {
-            log.severe(String.format("[%s] - Disabled due to no Vault dependency found!", getDescription().getName()));
+            log.severe(String.format("[%s] - ERROR: No Vault plugin found!", getDescription().getName()));
             getServer().getPluginManager().disablePlugin(this);
             return;
         }

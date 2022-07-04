@@ -3,6 +3,7 @@ version: '${project.version}'
 main: com.jordanhaddrick.rtm.Main
 api-version: 1.18
 authors: [SomeKidsBrother, Someone]
+depend: [Vault]
 description: Core plugin for RaidTheMine
 website: www.RaidTheMine.com
 commands:
@@ -41,4 +42,7 @@ commands:
     usage: /<command>
   tphere:
     description: Teleport to someone to you
+    usage: /<command>
+  speed:
+    description: Change your walking speed
     usage: /<command>
