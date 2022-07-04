@@ -26,7 +26,7 @@ public class SpeedCommand implements CommandExecutor {
                 Integer speed = Integer.parseInt(args[0]);
                 if (speed <= 10) {
                     String speed_message = main.getConfig().getString("speed-message");
-                    Integer walkspeed = speed / 10;
+                    float walkspeed = (speed / 10.0f);
                     player.setWalkSpeed(walkspeed);
                     sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + speed_message, Placeholder.component("speed", Component.text(speed))));
                 } else {
