@@ -33,7 +33,7 @@ public class SpeedCommand implements CommandExecutor {
                     String too_big_integer = main.getConfig().getString("too-big-integer");
                     sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + too_big_integer));
                 }
-            } catch (NumberFormatException e) {
+            } catch (Exception e)  {
                 String not_valid_integer = main.getConfig().getString("not-valid-integer");
                 sender.sendMessage(MiniMessage.miniMessage().deserialize(prefix_message + ' ' + not_valid_integer));
             }
