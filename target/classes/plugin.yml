@@ -42,3 +42,9 @@ commands:
   tphere:
     description: Teleport to someone to you
     usage: /<command>
+  anvil:
+    description: Open an anvil
+    usage: /<command>
+  speed:
+    description: Changes your walk speed
+    usage: /<command>

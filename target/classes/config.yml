@@ -119,3 +119,13 @@ tp-no-player-message: "<gradient:#FF0000:#FF3DC5>You can't teleport to no one!</
 tphere-message: "<gradient:#00FFEC:#FF00FB>You teleported <player> to you!</gradient>"
 
 tphere-no-player-message: "<gradient:#FF0000:#FF3DC5>You can't teleport no one to you!</gradient>"
+
+########################################################
+## SPEED COMMANDS
+########################################################
+
+speed-message: "<gradient:#00FFEC:#FF00FB>You set your walk speed to <speed>!</gradient>"
+
+not-valid-integer: "<gradient:#FF0000:#FF3DC5>Your speed must be a valid integer (up to 10)!</gradient>"
+
+too-big-integer: "<gradient:#FF0000:#FF3DC5>Your speed value must be less than or equal to 10!</gradient>"
